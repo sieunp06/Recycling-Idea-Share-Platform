@@ -20,11 +20,10 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'GIGO',
-          // You can use the library anywhere in the app even in theme
           theme: ThemeData(
+            fontFamily: 'nanumGothic',
             primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-          ),
+        ),
           home: child,
         );
       },
@@ -48,27 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Column(
         children: [
-          /*Container(
-            color: Color(0xff5b6354),
-            width: 360.w,
-            height: 345.h,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 250,
-                ),
-                Text(
-                  "GIGO 하다",
-                  style: TextStyle(
-                    fontSize: 40.sp,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),*/
           Stack(
             children: [
               Container(
@@ -86,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                       fontSize: 42.sp,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
+                      fontFamily: 'namumGothic', fontWeight: FontWeight.w700
                     ),
                   ),
               ),
@@ -107,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 15.sp,
-                    fontWeight: FontWeight. bold,
+                    fontFamily: 'namumGothic', fontWeight: FontWeight.w700,
                     color: Color(0xff5b6354),
                   ),
                 ),
@@ -116,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 15.sp,
-                    fontWeight: FontWeight. bold,
+                    fontFamily: 'namumGothic', fontWeight: FontWeight.w700,
                     color: Color(0xff5b6354),
                   ),
                 ),
