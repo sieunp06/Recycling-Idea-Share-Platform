@@ -47,44 +47,82 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget> [
-          Container(
+        children: [
+          /*Container(
             color: Color(0xff5b6354),
             width: 360.w,
             height: 345.h,
-            child: Text(
-              "GIGO 하다",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 40.sp,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  height: 250,
+                ),
+                Text(
+                  "GIGO 하다",
+                  style: TextStyle(
+                    fontSize: 40.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
+          ),*/
+          Stack(
+            children: [
+              Container(
+                color: Color(0xff5b6354),
+                width: 360.w,
+                height: 345.h
+              ),
+              Positioned(
+                top: 265.0.h,
+                left: 35.0.w,
+                  child: Text(
+                    "GIGO 하다",
+                    softWrap: true,
+                    overflow: TextOverflow.fade,
+                    style: TextStyle(
+                      fontSize: 42.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+              ),
+            ],
           ),
           Container(
-            color: Colors.white,
             width: 360.w,
-            height: (328).h,
-            children: [
-              Text(
-                "GARBAGE_IN",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold,
+            height: 328.h,
+            margin: EdgeInsets.only(left:35.0.w),
+            child: Column (
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  height: 20.h,
                 ),
-              ),
-              Text(
-                "GARBAGE_OUT",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold,
+                Text (
+                  "GARBAGE-IN",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight. bold,
+                    color: Color(0xff5b6354),
+                  ),
                 ),
-              ),
-            ]
-          ),
+                Text (
+                  "GARBAGE-OUT",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight. bold,
+                    color: Color(0xff5b6354),
+                  ),
+                ),
+              ],
+            ),
+          )
         ]
       ),
     );
