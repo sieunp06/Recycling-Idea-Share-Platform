@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gigo/ideaPage.dart';
+import 'package:gigo/classPage.dart';
+import 'package:gigo/workshopPage.dart';
+import 'package:gigo/eventPage.dart';
 
-/*class homePage extends StatefulWidget {
-  @override
-  _homePageState createState() => _homePageState();
-}
-
-class _homePageState extends State<homePage> {*/
 class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,6 +54,11 @@ class homePage extends StatelessWidget {
                 ),
                 onTap: () {
                   print('아이디어 클릭');
+                  /* ideaPage로 화면 전환 */
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ideaPage()),
+                  );
                 },
               ),
               GestureDetector(
@@ -68,6 +71,11 @@ class homePage extends StatelessWidget {
                 ),
                 onTap: () {
                   print('클래스 클릭');
+                  /* classPage로 화면 전환 */
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => classPage()),
+                  );
                 },
               ),
               GestureDetector(
@@ -80,6 +88,11 @@ class homePage extends StatelessWidget {
                 ),
                 onTap: () {
                   print('공방 클릭');
+                  /* workshopPage로 화면 전환 */
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => workshopPage()),
+                  );
                 },
               ),
               GestureDetector(
@@ -92,6 +105,11 @@ class homePage extends StatelessWidget {
                 ),
                 onTap: () {
                   print('이벤트 클릭');
+                  /* eventPage로 화면 전환 */
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => eventPage()),
+                  );
                 },
               ),
             ],
@@ -109,6 +127,9 @@ class homePage extends StatelessWidget {
           Container(
             child: Row(
               children: [
+                SizedBox(
+                  width: 10.w,
+                ),
                 Text(
                   "이런 아이디어는 어떠세요?",
                   textAlign: TextAlign.left,
@@ -124,6 +145,11 @@ class homePage extends StatelessWidget {
                   ),
                   onTap: () {
                     print('아이디어 더보기 버튼 클릭');
+                    /* ideaPage로 이동 */
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ideaPage()),
+                    );
                   },
                 ),
               ]
