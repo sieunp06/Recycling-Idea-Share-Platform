@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:gigo/ideaPage.dart';
 import 'package:gigo/classPage.dart';
 import 'package:gigo/workshopPage.dart';
 import 'package:gigo/eventPage.dart';
 
 class homePage extends StatelessWidget {
+  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,9 +120,45 @@ class homePage extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Container(
-            height: 200.h,
-            color: Colors.purple,
+          Stack(
+            children: [
+              Container(
+                height: 200.h,
+                child: PageView(
+                  controller: controller,
+                  children: [
+                    Container(
+                      color: Colors.red,
+                    ),
+                    Container(
+                      color: Colors.green,
+                    ),
+                    Container(
+                      color: Colors.blue,
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
+                /*top: 180.0.h,
+                left: 170.w,*/
+                bottom: 15.h,
+                right: 155.w,
+                child: SmoothPageIndicator(
+                  controller: controller,  // PageController
+                  count:  3,
+                  effect:  WormEffect(
+                    dotHeight: 10.h,
+                    dotWidth: 10.w,
+                    type: WormType.thin,
+                  ),  // your preferred effect
+                  onDotClicked: (index){
+
+                  }
+                ),
+              )
+
+            ],
           ),
           SizedBox(
             height: 5.h,
@@ -134,7 +173,7 @@ class homePage extends StatelessWidget {
                   "이런 아이디어는 어떠세요?",
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    fontSize: 20.sp,
+                    fontSize: 18.sp,
                     fontFamily: 'namumGothic', fontWeight: FontWeight.w700
                   ),
                 ),
