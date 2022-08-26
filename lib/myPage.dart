@@ -38,6 +38,11 @@ class myPage extends StatelessWidget {
                 color: Colors.white,
                 size: 120.h,
               ),
+            ),
+            Positioned(
+              child: Text(
+                "사용자 이름"
+              )
             )
           ],
         )
